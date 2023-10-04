@@ -1,0 +1,45 @@
+.tabs {
+  display: flex;
+  width: 502px;
+  height: 50px;
+  margin-bottom: 20px;
+
+  &__button {
+    width: 168px;
+    height: 50px;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    color: rgba(74, 74, 74, 1);
+    background: #ffffff;
+    border: 1px solid #dfe5ec;
+    &_cheapest {
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+    }
+    &_optimal {
+      border-top-right-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+    &_fast {
+      border-left: 0px solid #dfe5ec;
+      border-right: 0px solid #dfe5ec;
+    }
+    &_cheapest:hover,
+    &_fast:hover,
+    &_optimal:hover {
+      background: rgba(33, 150, 243, 1);
+      color: #ffffff;
+      border-color: rgba(33, 150, 243, 1);
+    }
+  }
+}
+.checked {
+  background: rgba(33, 150, 243, 1);
+  color: #ffffff;
+  border-color: rgba(33, 150, 243, 1);
+}
+

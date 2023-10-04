@@ -1,0 +1,66 @@
+.filters {
+  height: 252px;
+  width: 232px;
+  background: #ffffff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+
+  &__title {
+    padding: 18px 20px 10px 20px;
+		text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 12px;
+    letter-spacing: 0.5px;
+    color: rgba(74, 74, 74, 1);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    height: 40px;
+  }
+
+  &__label {
+    display: flex;
+    padding: 8px 20px;
+  }
+
+  &__checkbox {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px;
+    color: rgba(74, 74, 74, 1);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 20px;
+  }
+
+  &__text::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border: 1px solid rgba(154, 187, 206, 1);
+    border-radius: 2px;
+  }
+
+  &__checkbox:checked + &__text::before {
+    border: 1px solid rgba(33, 150, 243, 1);
+    background: url('./check.svg') 50% 50% no-repeat;
+  }
+
+  &__label:hover {
+    cursor: pointer;
+    background: #f1fcff;
+  }
+}

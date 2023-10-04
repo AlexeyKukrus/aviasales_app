@@ -1,0 +1,15 @@
+.container {
+  width: 760px;
+  height: 100vh;
+  margin: 0 auto;
+	padding: 20px;
+  background: #f3f7fa;
+
+.app {
+	display: flex;
+	justify-content: space-between;
+	&__main {
+		width: 502px;
+	}
+}
+}
