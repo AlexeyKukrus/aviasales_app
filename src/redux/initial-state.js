@@ -9,3 +9,9 @@ export const initialStateFilter = [
 export const initialStateTabs = {
   tab: 'cheapest',
 };
+
+export const initialStateTickets = {
+  tickets: [],
+  loading: false,
+  error: null,
+};
