@@ -1,3 +1,4 @@
+import { getSearchId } from '../../services/get-id';
 import { getTicketsData } from '../../services/get-tickets';
 
 import {
@@ -8,9 +9,10 @@ import {
   FETCH_TICKETS_START,
   FETCH_TICKETS_SUCCESS,
   FETCH_TICKETS_FAILURE,
+  VIEW_MORE,
 } from './action-types';
 
-export const toggleFilter = (id) => ({ type: TOGGLE_FILTER, payload: { id } });
+export const toggleFilter = (value) => ({ type: TOGGLE_FILTER, payload: { value } });
 
 export const onTabCheapest = () => ({ type: TAB_CHEAPEST });
 export const onTabFast = () => ({ type: TAB_FAST });
@@ -26,17 +28,7 @@ export const fetchTicketsFailure = (error) => ({
   payload: error,
 });
 
-export const fetchTickets = () => {
-  return async (dispatch) => {
-    dispatch({ type: FETCH_TICKETS_START });
-    try {
-      const ticketsData = await getTicketsData();
-      dispatch({ type: FETCH_TICKETS_SUCCESS, payload: ticketsData });
-    } catch (error) {
-      dispatch({ type: FETCH_TICKETS_FAILURE, payload: error.message });
-    }
-  };
-};
+export const viewMore = () => ({ type: VIEW_MORE });
 
 const getData = async (id, dispatch) => {
   try {
@@ -59,7 +51,7 @@ const getData = async (id, dispatch) => {
 
 export const getDataId = () => {
   return async (dispatch) => {
-    const id = await getTicketsData();
+    const id = await getSearchId();
     await getData(id, dispatch);
   };
 };

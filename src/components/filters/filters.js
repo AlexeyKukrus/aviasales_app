@@ -10,8 +10,8 @@ const Filters = () => {
   const { toggleFilter } = actions;
   const dispatch = useDispatch();
 
-  const handleChange = (id) => {
-    dispatch(toggleFilter(id));
+  const handleChange = (value) => {
+    dispatch(toggleFilter(value));
   };
 
   return (
@@ -19,13 +19,13 @@ const Filters = () => {
       <h2 className={classes.filters__title}>Количество пересадок</h2>
       <ul className={classes.filters__list}>
         {filter.map((filter) => (
-          <li key={filter.id} className={classes.filters__item}>
+          <li key={filter.value} className={classes.filters__item}>
             <label className={classes.filters__label}>
               <input
                 type="checkbox"
                 className={classes.filters__checkbox}
                 checked={filter.checked}
-                onChange={() => handleChange(filter.id)}
+                onChange={() => handleChange(filter.value)}
               />
               <span className={classes.filters__text}>{filter.label}</span>
             </label>

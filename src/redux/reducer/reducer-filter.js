@@ -4,17 +4,17 @@ import { TOGGLE_FILTER } from '../actions/action-types';
 export const reducerFilter = (state = initialStateFilter, action) => {
   switch (action.type) {
     case TOGGLE_FILTER: {
-      const { id } = action.payload;
+      const { value } = action.payload;
       let updatedState = [...state];
 
-      if (id === 'all') {
+      if (value === 'all') {
         const allChecked = state[0].checked;
         updatedState = updatedState.map((checkbox) => ({
           ...checkbox,
           checked: !allChecked,
         }));
       } else {
-        const index = state.findIndex((checkbox) => checkbox.id === id);
+        const index = state.findIndex((checkbox) => checkbox.value === value);
         updatedState[index] = {
           ...updatedState[index],
           checked: !updatedState[index].checked,
